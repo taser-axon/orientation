@@ -1,0 +1,35 @@
+doctype html
+html
+	head
+		title= title
+
+		script(src='/assets/scripts/jquery/jquery.js')
+		script(src='/assets/scripts/jquery/jquery-ui.js')
+		script(src='/assets/scripts/underscore/underscore.min.js')
+		script(src='/assets/scripts/backbone/backbone-min.js')
+		script(src='/assets/scripts/materialize/materialize.js')
+		script(src='/assets/scripts/typed/typed.js')
+
+		script(src='https://unpkg.com/dropbox/dist/Dropbox-sdk.min.js')
+
+		link(href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900' rel='stylesheet' type='text/css')
+
+		link(rel='stylesheet', href='/assets/styles/square.css', type='text/css', media='screen')
+		link(rel='stylesheet', href='/assets/styles/lato.css' type='text/css')
+		link(rel='stylesheet', href='/assets/styles/open-sans.css' type='text/css')
+		link(rel='stylesheet', href='/assets/styles/jquery.css')
+		link(rel='stylesheet', href='/assets/styles/bootstrap-theme.css')
+		link(rel='stylesheet', href='/assets/styles/bootstrap.css')
+		link(rel='stylesheet', href='/assets/styles/materialize.css')
+		link(rel='stylesheet', href='/assets/styles/typed.css')
+		link(rel='stylesheet', href='/src/styles/index.css')
+
+
+	body
+		#app
+
+		script(src='/socket.io/socket.io.js')
+		//script(src='/build/index.js')
+		script(src='http://localhost:8080/build/index.js')

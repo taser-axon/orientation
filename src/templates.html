@@ -1,0 +1,115 @@
+
+<script id='presenter' type='text/html'>
+	<% var sections_len = sections.length, teams_len = teams.length; %>
+	<ul class='navbar'>
+		<% for (var i=0; i<sections_len; i++) { %>
+			<li data-section='<%= i %>'><%= sections[i].title %></li>
+		<% } %>
+	</ul>
+	<div class='section'>
+		<% for (var i=0; i<sections_len; i++) { %>
+			<% var scripts_len = sections[i].scripts.length, slides_len = sections[i].slides.length; %>
+			<div id='<%= i %>'>
+				<ul class='script-tabs'>
+					<% for (var j=0; j<scripts_len; j++) { %>
+						<li data-section='<%= i %>' data-script='<%= j %>'>
+							<% tab = j == 0 ? 'Script' : 'Mission-'+j %>
+							<%= tab %>
+						</li>
+					<% } %>
+				</ul>
+				<ul class='slides'>
+					<% for (var j=0; j<slides_len; j++) { %>
+						<li data-slide='<%= i %>-<%= j %>' data-type='<%= sections[i].slides[j].type %>'>
+							<img src='<%= sections[i].slides[j].thumb %>'>
+						</li>
+					<% } %>
+				</ul>
+			</div>
+		<% } %>
+	</div>
+	<div class='script-frame'>
+		<iframe src=''></iframe>
+	</div>
+	<div class='rankings'>
+		<!--<div class='teams'>
+			<p>Total Teams: <span><%= teams_len %></span></p>
+			<input type="range" min="1" max="3" value=<%= teams_len %>>
+		</div>-->
+		<div class='points input-field'>
+			<input id='max_points' type='text' value=<%= model.attributes.max_points %>>
+			<label for='max_points'>Max Points</label>
+		</div>
+		<% for (var i=0; i<teams_len; i++) { %>
+			<div class='points input-field'>
+				<input id='<%= teams[i] %>' type='text' value='<%= model.attributes[teams[i]] %>'>
+				<label for='<%= teams[i] %>'>Team <%= teams[i] %></label>
+			</div>
+		<% } %>
+		<button id='display'>Display Rankings</button>
+	</div>
+</script>
+
+<script id='projector' type='text/html'>
+	<% var sections_len = sections.length, teams_len = teams.length; %>
+	<div class='projector-frame'>
+		<ul>
+			<li id='rankings'>
+				<% for (var i=0; i<teams_len; i++) { %>
+					<div class='ranking' data-team='<%= teams[i] %>'>
+						<p class='name'>Team <%= teams[i] %></p>
+						<div class='bar'></div>
+					</div>
+				<% } %>
+			</li>
+			<% for (var i=0; i<sections_len; i++) { %>
+				<% var slides_len = sections[i].slides.length; %>
+				<% for (var j=0; j<slides_len; j++) { %>
+					<li id='<%= i %>-<%= j %>'>
+						<% if (sections[i].slides[j].type == 'mp4') { %>
+							<video src='<%= sections[i].slides[j].file %>' type='video/mp4' controls></video>
+						<% } else { %>
+							<img src='<%= sections[i].slides[j].file %>'>
+						<% } %>
+					</li>
+				<% } %>
+			<% } %>
+		</ul>
+	</div>
+</script>
+
+<script id='missions' type='text/html'>
+	<% sections_len = sections.length %>
+	<div class='mission-tabs'>
+		<ul>
+			<% for (var i=0; i<sections_len; i++) { %>
+				<% for (var j=0, missions_len=sections[i].missions.length; j<missions_len; j++) { %>
+					<% if (missions_len == 1 || sections[i].missions[j].toLowerCase().indexOf(team) > -1) { %>
+						<li data-section='<%= i %>'>
+							<div class='head' data-section='<%= i %>'>Mission</div>
+							<div class='body' data-section='<%= i %>'><%= sections[i].title %></div>
+						</li>
+					<% } %>
+				<% } %>
+			<% } %>
+		</ul>
+	</div>
+	<div class='mission-frame'>
+		<ul>
+			<% for (var i=0; i<sections_len; i++) { %>
+				<% for (var j=0, missions_len=sections[i].missions.length; j<missions_len; j++) { %>
+					<% if (missions_len == 1 || sections[i].missions[j].toLowerCase().indexOf(team) > -1) { %>
+						<li id='<%= i %>'>
+							<h2><%= sections[i].title %></h2>
+							<div class='password-container input-field'>
+								<input id='password' type='text' data-index='<%= i %>'>
+								<label for='password'>Password</label>
+							</div>
+						</li>
+					<% } %>
+				<% } %>
+			<% } %>
+		</ul>
+		<iframe src=''></iframe>
+	</div>
+</script>

@@ -1,0 +1,477 @@
+
+/*############################### APP ###############################*/
+
+body {
+	background: #151515;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  	font-family: 'Montserrat', sans-serif;
+	font-family: "Square Market",Helvetica,Arial,"Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
+	font-family: "Lato", sans-serif;
+	/*font-family: "Open Sans", sans-serif;*/
+	/*font-family: 'Roboto', sans-serif;*/
+}
+
+a {
+	color: #00B7FF;
+	color: #FDD009;
+}
+
+a:hover {
+	color: #FDD009;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.button {
+	background: #444;
+	border-radius: 0;
+}
+
+.button:hover {
+	cursor: pointer;
+	background: #666;
+}
+
+input[type='range'] {
+	border: 0;
+}
+
+#app {
+	background: #262A30;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	min-width: 1024px;
+}
+
+header {
+	/*min-width: 1024px;*/
+	color: #fff;
+	font-weight: 300;
+	position: absolute;
+	z-index: 1000;
+	text-align: center;
+	height: 60px;
+	top: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 1px solid #464A50;
+}
+
+header .logo {
+	opacity: 1;
+	height: 35px;
+	display: inline;
+	vertical-align: top;
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+header .title {
+	position: absolute;
+	margin: 0;
+	font-size: 20px;
+	font-weight: 300;
+	top: 17px;
+	left: 275px;
+	text-align: left;
+	font-family: 'Orbitron', sans-serif;
+	padding: 0px 20px;
+	padding-top: 3px;
+	border-left: 15px solid #5f6a7d;
+}
+
+header .views {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: 0;
+	padding: 0 10px;
+	border-left: 1px solid #464A50;
+}
+
+header .views li {
+	height: 100%;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: 'Orbitron', sans-serif;
+	color: #fff;
+	text-transform: uppercase;
+	line-height: 62px;
+	letter-spacing: 1px;
+	display: inline-block;
+}
+
+header .views li:hover {
+	cursor: pointer;
+}
+
+header li.view-background {
+	background: #fff;
+	height: 2px;
+	position: absolute;
+	bottom: 12px;
+	z-index: -100;
+	transition: .6s;
+}
+
+main {
+	width: auto;
+	position: absolute;
+	top: 60px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: auto;
+	background: transparent;
+	margin: 0;
+	max-width: none;
+	color: white;
+	text-align: center;
+}
+
+/*############################# LOADING #############################*/
+
+.loading {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: .6s;
+/*	background: #2A2A2A;
+	background: #777;
+	background: #393939;*/
+	background: #262A30;
+	border-bottom: 3px solid #ccc;
+	z-index: 1000000;
+	color: #fff;
+	font-size: 60px;
+	font-family: 'Orbitron', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.loading p {
+	margin-top: 200px;
+	display: inline-block;
+}
+
+.typed-cursor {
+	color: #fff;
+}
+
+/*############################# PRESENTER #############################*/
+
+.presenter iframe {
+	min-width: 100%;
+	min-height: 100%;
+	display: inherit;
+}
+
+.presenter .navbar {
+	border-bottom: 1px solid #464A50;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 50px;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.presenter .navbar li {
+	display: inline-block;
+	padding: 5px 15px;
+	line-height: 40px;
+	font-size: 16px;
+	margin: 0px 10px;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	color: #fff;
+}
+
+.presenter .navbar li:hover {
+	cursor: pointer;
+}
+
+/*.presenter .section {
+	position: absolute;
+	top: 50px;
+	bottom: 110px;
+	left: 0px;
+	right: 0px;
+	overflow: auto;
+}*/
+
+.presenter .script-tabs {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50px;
+	height: 40px;
+	margin: 0;
+	border-bottom: 1px solid #464A50;
+	text-transform: uppercase;
+}
+
+.presenter .script-tabs li {
+	display: inline-block;
+	padding: 0px 20px;
+	margin: 0px 10px;
+	line-height: 40px;
+}
+
+.presenter .script-tabs li:hover {
+	cursor: pointer;
+}
+
+.presenter .script-frame {
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	top: 110px;
+	bottom: 230px;
+	overflow: auto;
+}
+
+.presenter .slides {
+	position: absolute;
+	height: 100px;
+	left: 0px;
+	right: 0px;
+	bottom: 110px;
+	padding: 20px 10px;
+	margin: 0;
+	overflow: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	border-top: 1px solid #464A50;
+}
+
+.presenter .slides li {
+	margin: 0px 10px;
+	position: relative;
+	height: 100%;
+	display: inline-block;
+}
+
+.presenter .slides li:hover {
+	cursor: pointer;
+}
+
+.presenter .slides img {
+	height: 100%;
+	display: block;
+}
+
+.presenter .rankings {
+	position: absolute;
+	bottom: 0px;
+	height: 110px;
+	left: 0px;
+	right: 0px;
+	border-top: 1px solid #464A50;
+	white-space: nowrap;
+	overflow: auto;
+	padding-top: 20px;
+}
+
+.presenter .rankings .points {
+	display: inline-block;
+	width: 90px;
+	text-align: left;
+	margin: 10px 25px;
+	vertical-align: top;
+}
+
+.presenter .rankings .points:first-child {
+	margin-right: 60px;
+}
+
+.presenter .rankings input {
+	text-align: center;
+	width: 100%
+}
+
+.presenter .rankings label {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.presenter .rankings #display {
+	margin: 0px 25px;
+	margin-left: 40px;
+	vertical-align: top;
+	text-transform: uppercase;
+	background: #5f6a7d;
+	border-radius: 0;
+	min-width: 0;
+	width: 130px;
+	padding: 0px 20px;
+	white-space: normal;
+	height: 65px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+
+/*############################### PROJECTOR ###############################*/
+
+.projector .projector-frame {
+	position: absolute;
+	left: 50px;
+	right: 50px;
+	top: 50px;
+	bottom: 50px;
+}
+
+.projector li {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	/*display: none;*/
+}
+
+.projector li#rankings {
+	display: block;
+}
+
+.projector img, .projector video {
+	height: 100%;
+}
+
+
+#rankings {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transition: .6s;
+	text-align: left;
+}
+
+.projector #rankings .ranking {
+	height: 33%;
+}
+
+.projector #rankings .name {
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	font-family: 'Orbitron', sans-serif;
+	font-weight: 300;
+}
+
+.projector #rankings .bar {
+	background: #000040;
+	background: #ccd;
+	opacity: .8;
+	transition: .6s;
+	height: 40%;
+	width: 0;
+}
+
+/*############################### MISSIONS ###############################*/
+
+.mission-tabs {
+	position: absolute;
+	left: 0;
+	width: 270px;
+	top: 0;
+	bottom: 0;
+	border-right: 1px solid #464A50;
+	text-transform: uppercase;
+	color: #fff;
+	overflow: auto;
+}
+
+.mission-tabs li {
+	padding: 20px;
+	border-bottom: 1px solid #363A40;
+}
+
+.mission-tabs li:hover {
+	cursor: pointer;
+}
+
+.mission-tabs li .head {
+	font-weight: 500;
+}
+
+.mission-tabs li .body {
+	font-weight: 300;
+}
+
+.mission-frame {
+	position: absolute;
+	right: 0;
+	left: 270px;
+	top: 0;
+	bottom: 0;
+}
+
+.mission-frame h2 {
+	color: #fff;
+	font-weight: 300;
+	font-size: 30px;
+	padding: 0px 40px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+.mission-frame li {
+	/*display: none;*/
+	position: absolute;
+	margin: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.mission-frame .password-container {
+	position: absolute;
+	top: 150px;
+	left: 300px;
+	right: 300px;
+	/*border: 5px solid #ccc;*/
+	padding: 40px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.mission-frame .password-container input {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 20px;
+}
+
+.mission-frame .password-container label {
+	top: 40px;
+	left: 40px;
+	right: 40px;
+	font-weight: 400;
+	font-size: 16px;
+	width: auto;
+}
+
+.mission-frame iframe {
+	display: none;
+	min-height: 100%;
+	min-width: 100%;
+}

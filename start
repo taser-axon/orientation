@@ -1,0 +1,11 @@
+#!/bin/bash
+# killall node
+# ./node_modules/.bin/webpack
+node main.js &
+# cd apps/_main && coffee --watch --map --output build src &
+# cd apps/discounts && coffee --watch --map --output build src &
+# cd apps/feature-tiers && coffee --watch --map --output build src &
+# cd apps/iacp && coffee --watch --map --output build src &
+# cd apps/redaction && coffee --watch --map --output build src &
+
+# cd apps/orientation && coffee --watch --map --output build coffee
